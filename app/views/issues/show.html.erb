@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @issue.title %>
@@ -10,6 +9,26 @@
   <%= @issue.description %>
 </p>
 <p> <%= image_tag @issue.avatar.url %> </p>
+<div class="row">
+    <% @issue.articles.each do |article| %>
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h1><%= article.title %></h1>
+            <h2><%= article.author%></h2>
+            <p><%= article.content%></p>
+            
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
+
+
+
+
+
+
 
 <%= link_to 'Edit', edit_issue_path(@issue) %> |
 <%= link_to 'Back', issues_path %>
