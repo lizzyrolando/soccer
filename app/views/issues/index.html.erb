@@ -12,20 +12,26 @@
   </thead>
 
 
-
-  <tbody>
+<div class="row">
     <% @issues.each do |issue| %>
-      <tr>
-        <td><%= issue.title %></td>
-        <td><%= issue.description %></td>
-        <td><%= image_tag issue.avatar.url(:thumb) %></td>
-        <td><%= link_to 'Show', issue %></td>
-        <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
-        <td><%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h1><%= issue.title %></h1>
+            <h2><%= issue.description %></h2>
+            <% if issue.avatar_file_name != nil %>
+              <%= image_tag issue.avatar.url(:medium) %>
+            <% end %>
+              <div class="btn-group">
+                <%= link_to 'Show', issue, class: "btn btn-default" %>
+                <%= link_to 'Edit', edit_issue_path(issue), class: "btn btn-default" %>
+                <%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+              </div>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+</div>
 
 <br>
 

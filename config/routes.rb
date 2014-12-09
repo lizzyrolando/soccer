@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   resources :articles
 
+  root 'issues#index'
+
 end
