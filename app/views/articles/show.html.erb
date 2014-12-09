@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Article</h2>
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -17,7 +18,22 @@
 
 <p>
   <strong>Issue:</strong>
-  <%= @article.issue_id %>
+  <%= @article.issue.title%>
+</p>
+
+<p>
+  <strong>Issue:</strong>
+  <%= @article.issue.description%>
+</p>
+<h2>Quiz</h2>
+<p>
+  <strong>Question:</strong>
+  <%= @article.quiz.question%>
+</p>
+
+<p>
+  <strong>Answer:</strong>
+  <%= @article.quiz.correct_answer%>
 </p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
