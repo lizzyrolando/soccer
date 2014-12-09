@@ -15,10 +15,14 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    @issue = Issue.all
+    @quiz = Quiz.all
   end
 
   # GET /articles/1/edit
   def edit
+    @issue = Issue.all
+    @quiz = Quiz.all
   end
 
   # POST /articles
