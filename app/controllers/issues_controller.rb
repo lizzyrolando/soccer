@@ -15,10 +15,14 @@ class IssuesController < ApplicationController
   # GET /issues/new
   def new
     @issue = Issue.new
+    @article = Article.all
+    @quiz = Quiz.all
   end
 
   # GET /issues/1/edit
   def edit
+    @article = Article.all
+    @quiz = Quiz.all
   end
 
   # POST /issues
@@ -69,6 +73,6 @@ class IssuesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def issue_params
-      params.require(:issue).permit(:title, :description)
+      params.require(:issue).permit(:title, :description, :avatar)
     end
 end
