@@ -1,0 +1,12 @@
+<h1>Welcome to Soccer Magazine Site and Quiz Page</h1>
+<% if user_signed_in? %>
+
+  Hello, <%= current_user.email %>!<br />
+  <%= link_to "Sign out",destroy_user_session_path, method: :delete, class: "button" %>
+
+<% else %>
+
+  <%= link_to "Sign in",new_user_session_path %>
+
+<% end %>
+
