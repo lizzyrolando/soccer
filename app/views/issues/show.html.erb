@@ -8,7 +8,7 @@
   <strong>Description:</strong>
   <%= @issue.description %>
 </p>
-<p> <%= image_tag @issue.avatar.url %> </p>
+<p> <%= image_tag @issue.avatar.url, width:"50%", height:"40%" %> </p>
 <div class="row">
     <% @issue.articles.each do |article| %>
       <div class="col-md-8">
@@ -21,6 +21,7 @@
           </div>
         </div>
         <div class = "col-md-4">
+            
             <h2>Quiz time!</h2>
             <p>Question</p>
             <p><%= article.quiz.question %></p>
